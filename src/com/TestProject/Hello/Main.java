@@ -59,10 +59,6 @@ public class Main {
     }
 
 
-
-
-
-
     //Need throws exception as it tells compiler it might throw an exception.
     public static void checkForException(int number) throws Exception{
         if (number == 0){
