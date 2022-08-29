@@ -7,6 +7,8 @@ import java.util.*;
 import java.util.function.Supplier;
 
 
+import java.util.Random;
+
 public class Main {
     public static void main(String[] args) throws Exception {
 
@@ -50,7 +52,16 @@ public class Main {
         //gui.TableToJpanel(); //Using Test method to run code.
 
 
+
+        // collatz conjecture.
+        //collatzConjecturTheory();
+
     }
+
+
+
+
+
 
     //Need throws exception as it tells compiler it might throw an exception.
     public static void checkForException(int number) throws Exception{
@@ -322,4 +333,45 @@ public class Main {
         System.out.println(pair2);
 
     }
+    public static void collatzConjecturTheory(){
+
+        long x = 5;
+        long y = x;
+        int z = 0;
+
+        System.out.println("Starting number y = " + y);
+
+        while (y != 1 && y > 0) {
+
+
+            if (y % 2 == 0) {
+
+                y /= 2;
+                z++;
+                //System.out.println("y = " + y);
+
+            } else {
+
+                y = 3 * y + 1;
+                z++;
+                //System.out.println("y = " + y);
+            }
+
+            if(y == 1){ //if y is equal to 1
+
+                System.out.println("Starting value = " + x );
+                System.out.println("Number of lines = " + z );
+                z = 0;
+
+                x += 1;    //we add 1 back to the original number.
+
+                y = x;     //Set the new number to y which was originally 5, but we add one to the original number
+            }
+
+            if(x == 205){ break;}  //Number to break the loop. So it does not go forever.
+
+        }
+
+    }
+
 }
