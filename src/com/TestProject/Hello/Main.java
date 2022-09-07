@@ -21,7 +21,7 @@ public class Main {
         //Classes and Objects.
         //dogJavaClass();
 
-        //Inheritance and Polymorphism:
+        //Inheritance and Polymorphism.
         //dogAndCatInheritanceOfAnimal();
 
         //Interface and Abstract classes.
@@ -51,10 +51,15 @@ public class Main {
         //guiInterfaces gui = new guiInterfaces();//New instance of Test class.
         //gui.TableToJpanel(); //Using Test method to run code.
 
-
-
         // collatz conjecture.
         //collatzConjecturTheory();
+
+        //calculate how many miles, yards, feet, and inches are there.
+        //howManyMilesInInchesProvided();
+
+
+
+
 
     }
 
@@ -368,6 +373,61 @@ public class Main {
 
         }
 
+    }
+    public static void howManyMilesInInchesProvided(){
+        Scanner in = new Scanner(System.in);
+
+        int miles = 0;
+        int yards = 0;
+        int feet = 0;
+        int inches = 0;
+
+        int input;
+        int originalInput;
+
+        System.out.print("Enter the raw distance measurement in inches: ");
+        input = in.nextInt();
+
+        originalInput = input;
+
+
+        if(input > 0) {
+            //miles
+            while (input > 63360) {
+                input -= 63360;
+                miles++;
+            }
+
+            //yards
+            while (input > 36) {
+                input -= 36;
+                yards++;
+            }
+
+            //feet
+            while (input > 12) {
+                input -= 12;
+                feet++;
+            }
+
+            //inches
+            while (input > 0) {
+                input -= 1;
+                inches++;
+
+            }
+
+            System.out.println("\nMeasurement by combined miles, yards, feet, inches: ");
+            System.out.print("\tmiles: " + miles);
+            System.out.print("\n\tyards: " + yards);
+            System.out.print("\n\tfeet: " + feet);
+            System.out.println("\n\tinches: " + inches);
+
+            System.out.println("\n" + originalInput + " in = " + miles + " mi, " + yards +
+                    " yd, " + feet + " ft, " + inches + " in");
+        }else{
+            System.out.println("Measurement must be non-negative!");
+        }
     }
 
 }
